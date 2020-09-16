@@ -10,8 +10,60 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
-    <h1>Aymun 1st code + Surge hosting</h1>
-
+    <center>
+      <h1>Aymun's First Surge Hosting!!! Yaayy 💃</h1>
+      <h2>Check the Github Workflow file for the Action Jobs</h2>
+      <code>
+        name: Deploy Site
+        <br />
+        # Controls when the action will run. Triggers the workflow on push or
+        pull request # events but only for the master branch
+        <br />
+        on:
+        <br />
+        push:
+        <br />
+        branches: [ master ]
+        <br />
+        A workflow run is made up of one or more jobs that can run sequentially
+        or in parallel jobs: # This workflow contains a single job called
+        "build"
+        <br />
+        build:
+        <br />
+        # The type of runner that the job will run on
+        <br />
+        runs-on:ubuntu-latest
+        <br />
+        # Steps represent a sequence of tasks that will be executed as part of
+        the job
+        <br />
+        steps:
+        <br />
+        # Checks-out your repository under$GITHUB_WORKSPACE, so your job can
+        access it
+        <br />
+        - uses: actions/checkout@v2
+        <br />
+        #Runs a single command using the runners shell
+        <br />
+        - name: Install Nodejs
+        <br />
+        uses:actions/setup-node@v2-beta
+        <br />
+        with:
+        <br />
+        node-version: 12
+        <br />
+        - name: Install Surge
+        <br />
+        run: npm install -g surge
+        <br />
+        - name: Run Site
+        <br />
+        run: surge ./bootcamplesson.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      </code>
+    </center>
     <script src="" async defer></script>
   </body>
 </html>

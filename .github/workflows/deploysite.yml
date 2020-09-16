@@ -32,5 +32,5 @@ jobs:
         run: npm install -g surge
       
       - name: Run Site 
-        uses: surge ./ bootcamplesson.surge.sh --token ${{secrets.SURGE_TOKEN}}
+        uses: surge ./ bootcamplesson.surge.sh ${{secrets.SURGE_TOKEN}}
 
